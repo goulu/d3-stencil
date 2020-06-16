@@ -14,48 +14,31 @@
   "author": "Edgar Ordóñez Rodríguez",
   "license": "MIT",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
-  "module": "dist/index.mjs",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/d3-stencil/d3-stencil.js",
   "files": [
-    "dist/"
+    "dist/",
+    "loader/"
   ],
   "scripts": {
+    "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
-    "build": "stencil build",
-    "test": "stencil test --spec --e2e --coverage",
+    "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "lint": "npx tslint --project tsconfig.json --fix",
-    "coveralls": "cat ./coverage/lcov.info | coveralls",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
-    "circular": "npx madge -c --extensions ts ./src --ts-config ./tsconfig.json",
-    "prepublish": "npm run build --no-cache --prod"
+    "generate": "stencil generate"
   },
   "dependencies": {
     "d3": "^5.15.0",
     "object-assign-deep": "^0.4.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.3.5",
-    "@commitlint/config-conventional": "^8.3.4",
-    "@stencil/core": "^1.11.2",
-    "@stencil/router": "1.0.1",
-    "@stencil/sass": "^1.1.1",
-    "@stencil/utils": "0.0.5",
-    "@types/d3": "^5.7.2",
-    "@types/jest": "24.9.1",
-    "@types/puppeteer": "2.0.1",
-    "coveralls": "^3.0.11",
-    "cz-conventional-changelog": "^3.1.0",
-    "husky": "^4.2.3",
-    "jest": "24.9.0",
-    "jest-cli": "24.9.0",
-    "madge": "^3.8.0",
-    "prettier": "^2.0.2",
-    "puppeteer": "2.1.1",
-    "tslint": "^6.1.0",
-    "tslint-config-prettier": "^1.18.0",
-    "workbox-build": "5.1.2"
+    "@stencil/core": "^1.12.2",
+    "@types/jest": "^26.0.0"
   },
   "repository": {
     "type": "git",
@@ -63,10 +46,5 @@
   },
   "bugs": {
     "url": "https://github.com/edgarordonez/d3-stencil"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }

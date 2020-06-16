@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
     "declaration": false,
     "experimentalDecorators": true,
-    "lib": ["dom", "esnext"],
+    "lib": [
+      "dom",
+      "es2017"
+    ],
     "moduleResolution": "node",
     "module": "esnext",
     "target": "es2017",
@@ -14,14 +16,19 @@
     "jsx": "react",
     "jsxFactory": "h",
     "skipLibCheck": true,
+    "baseUrl": "./",
     "paths": {
       "@components/*": ["src/components/*"],
       "@decorators/*": ["src/decorators/*"],
       "@interfaces/*": ["src/interfaces/*"],
       "@shared/*": ["src/shared/*"],
       "@utils/*": ["src/utils/*"]
-    }
-  },
-  "include": ["./**/*", "types/jsx.d.ts"],
-  "exclude": ["docs", "node_modules"]
+  }},
+  "include": [
+    "src",
+    "types/jsx.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
