@@ -6,6 +6,18 @@ import {
   hasDataValidOnAnnotationsChart,
 } from '@utils/index';
 
+export const DEFAULT_GRAPH_DATA_CANVAS: GraphData = {
+  styles: {
+    width: '0',
+    height: '0',
+    margin: '0',
+  },
+  canvas:
+    { background: '', },
+  hasData: (graphData: GraphData) => hasDataIsNotEmpty(graphData),
+};
+
+
 export const DEFAULT_GRAPH_DATA_PIE: GraphData = {
   pieChart: {
     labelFormat: 'ANY',
